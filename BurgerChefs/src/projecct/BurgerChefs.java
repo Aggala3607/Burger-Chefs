@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import burger.DeluxeBurger;
 import burger.HealthyBurger;
 
 
@@ -24,6 +25,7 @@ public static void ray(String[] x,int y,double[] z) {
 		double Hprice[]= {5.0,7.25,14.25};
 		double Mprice[]= {0,0,0,0};
 		Scanner input=new Scanner(System.in);
+		
 		String [] BreadRoll= {"Brioche Sandwich Roll",
 				"Ciabatta Oblong Bun",
 				"Ciabatta Square Bun",
@@ -33,14 +35,33 @@ public static void ray(String[] x,int y,double[] z) {
 		
 		
 		ray(Hamburger,3,Hprice);
+		System.out.println("4.Exit");
 		int choice=input.nextInt();
+		while(choice>4) {
+			System.out.println("Invalid Input");
+			ray(Hamburger,3,Hprice);
+			System.out.println("4.Exit");
+			 choice=input.nextInt();
+			 
+		}
+		if(choice<4) {
 		System.out.println("Select Your Bread");
 		ray(BreadRoll,4,Mprice);
-		
 		int bread=input.nextInt();
+		while(bread>4) {
+			System.out.println("Invalid Input");
+			ray(BreadRoll,4,Mprice);
+			 bread=input.nextInt();
+		}
 		ray(Meat,3,Mprice);
 		System.out.println("Select Your Meat");
 		int meat=input.nextInt();
+		while(meat>3) {
+			System.out.println("Invalid Input");
+			System.out.println("Select Your Meat");
+			 meat=input.nextInt();
+			
+		}
 		
 		if(choice==1) {
 			
@@ -122,6 +143,21 @@ if(choice==2) {
 			 obj.total(Tlist, TPrice);
 			
 		}
+if(choice==3) {
+	   Tlist.add("Chips");
+	   Tlist.add("Drink");
+	   TPrice.add(2.75);
+	   TPrice.add(1.81);
+	   DeluxeBurger obj=new DeluxeBurger(BreadRoll[bread-1],Meat[meat-1],10);
+	   obj.total(Tlist, TPrice);
+	   
+	   
+}
+		}
+		else {
+			System.out.println("Thank you");
+		}
+
 
 	}
 
