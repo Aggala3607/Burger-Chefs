@@ -153,14 +153,12 @@ if(choice==3) {
 	   
 	   
 }
-<<<<<<< HEAD
+
 		}
 		else {
 			System.out.println("Thank you");
 		}
 
-=======
->>>>>>> a2cba56f62cd30d7360d6c78182302687e29e544
 
 	}
 
