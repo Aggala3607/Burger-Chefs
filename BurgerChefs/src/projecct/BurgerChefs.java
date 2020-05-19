@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import burger.HealthyBurger;
+
 
 
 public class BurgerChefs {
@@ -78,6 +80,48 @@ public static void ray(String[] x,int y,double[] z) {
 			obj.total(Tlist, TPrice);
 			
 			}
+if(choice==2) {
+			
+			HealthyBurger obj=new HealthyBurger(BreadRoll[bread-1],Meat[meat-1],7.25);
+			String []toppings=obj.toppings();
+			double price[]=obj.price();
+			char ch='Y';
+			while(ch=='Y'||ch=='y') {
+				
+				
+				System.out.println("Add toppings");
+				ray(toppings,6,price);
+				int x=input.nextInt();
+				Tlist.add(toppings[x-1]);
+				TPrice.add(price[x-1]);
+				System.out.println("Do u want add more toppings   y/n");
+				
+				ch=input.next().charAt(0);
+				while(ch!='y'&&ch!='Y'&&ch!='n'&&ch!='N') {
+					System.out.println("Invalid input");
+					System.out.println("Do u want add more toppings   y/n");
+					ch=input.next().charAt(0);
+					
+					if(ch=='Y'||ch=='y') {
+						
+					ray(toppings,4,price);
+					 x=input.nextInt();
+					Tlist.add(toppings[x-1]);
+					TPrice.add(price[x-1]);
+					}
+					else if(ch=='n'||ch=='N') {
+						break;
+					}
+					
+					
+					
+					}
+				
+			
+		}
+			 obj.total(Tlist, TPrice);
+			
+		}
 
 	}
 

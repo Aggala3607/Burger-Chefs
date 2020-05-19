@@ -1,4 +1,4 @@
-package burger;
+package projecct;
 
 import java.util.List;
 
