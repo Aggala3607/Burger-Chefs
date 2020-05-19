@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import burger.DeluxeBurger;
 import burger.HealthyBurger;
 
 
@@ -122,6 +123,16 @@ if(choice==2) {
 			 obj.total(Tlist, TPrice);
 			
 		}
+if(choice==3) {
+	   Tlist.add("Chips");
+	   Tlist.add("Drink");
+	   TPrice.add(2.75);
+	   TPrice.add(1.81);
+	   DeluxeBurger obj=new DeluxeBurger(BreadRoll[bread-1],Meat[meat-1],10);
+	   obj.total(Tlist, TPrice);
+	   
+	   
+}
 
 	}
 
